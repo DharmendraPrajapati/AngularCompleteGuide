@@ -2,11 +2,24 @@
 <input type="text" class="form-control" (input)="onServerUpdate($event)">
 <br>
 <hr>
-<label>Two Way binding : </label>
+<!-- <label>Two Way binding : </label>
 <input type="text" class="form-control" [(ngModel)]="serverName">
 <button class="btn btn-primary" (click)="onServerNameUpdate()">Modify Server</button><br>
-<br>
+<br> -->
 
 <button class="btn btn-primary" [disabled] = "!allowNewServer" (click)="onCreateServer()">Add Server</button>
-<p>{{serverCreationStatus}}</p>
-<app-server></app-server>
+
+<p *ngIf = "serverCreated; else noServer">{{serverCreationStatus}}</p> 
+<ng-template #noServer>
+    <p>No Server Created</p> 
+</ng-template>
+<app-server *ngFor="let s of serversDetails"></app-server>
+
+
+
+<!-- Notes *********************
+* in ngIf Directive which is a structural directive(structural directive starts with *). ngIf will add or not add the element not hide 
+noServer is a kind of marker which indicate or mark the space in DOM or in template to show conditionally. 
+
+** Unlike structural directives, attribute directives do not add elements. They only change the element they were placed on.
+-->

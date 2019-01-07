@@ -1,1 +1,11 @@
-<h4>This is {{'Server'}} with Id : {{serverId}} is {{serverStatus}}</h4>
+<p [ngStyle]="{backgroundColor: getServerStatusColor()}"
+[ngClass] = "{online : serverStatus === 'Online'}"
+>This is {{'Server'}} with Id : {{serverId}} is {{serverStatus}}</p>
+
+
+
+<!-- 
+* We uses ngStyle diective like this [ngStyle]. [] This indicate that we are binding some property on this directive. 
+Property binding is not the same as directive.it is totally different. So here we are binding this property to the directive.
+* ngStyle allows us to change the style of the element where nhClass allow us to dinamically add or remove the class itself.
+-->
