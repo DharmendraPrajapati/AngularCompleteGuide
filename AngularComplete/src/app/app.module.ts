@@ -6,13 +6,17 @@ import { AppComponent } from './app.component';
 import { UserComponent } from './user/user.component';
 import { ServerComponent } from './server/server.component';
 import { ServersComponent } from './servers/servers.component';
+import { CockpitComponent } from './cockpit/cockpit.component';
+import { ServerElementComponent } from './server-element/server-element.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ServerComponent,
     UserComponent,
-    ServersComponent
+    ServersComponent,
+    CockpitComponent,
+    ServerElementComponent
   ],
   imports: [
     BrowserModule,
