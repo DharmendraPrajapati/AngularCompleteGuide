@@ -1,5 +1,6 @@
 <div class="row">
-  <div class="col-xs-12">
+  
+  <div class="col-md-12">
     <p>Add new Servers or blueprints!</p>
     <label>Server Name</label>
     <input type="text" class="form-control" [(ngModel)]="newServerName">
@@ -12,5 +13,20 @@
     <button
       class="btn btn-primary"
       (click)="onAddBlueprint()">Add Server Blueprint</button>
-  </div>
+  </div>      
+</div><hr>
+<div class="row">
+    <div class="col-xs-12">
+        <p>Example of local reference variable</p>
+        <label>Local Reference Name</label>
+          <input type="text" class="form-control" #localRefVar>
+          <label>Local Reference with View Child</label>
+          <input type="text" class="form-control" #localRefViewChild>
+          <br>
+          <p>Local Reference Name : {{localRefVar.value}}</p>
+          <p>Local Reference with View Child : {{localRefViewChild.value}}</p>
+          <br>
+          <button class="btn btn-primary" (click)="checkLocalRef(localRefVar)">Get Ref</button>
+          <button class="btn btn-primary" (click)="checkLocalRefViewChild()">Get Ref ViewChild</button>
+    </div>
 </div>

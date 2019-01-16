@@ -1,0 +1,24 @@
+<div class="row">
+    <div class="col-xs-12">
+        <button class="btn btn-success">New Recipe</button>
+    </div>
+</div>
+<hr>
+<div class="row">
+    <div class="col-md-12">
+        <a href="#" class="list-group-item clearfix" *ngFor="let r of recipes;let i = index">
+            <div class="float-left">
+                <h4>{{i+1}}</h4>
+                <h5 class="list-group-item-heading">{{r.name}}</h5>
+                <p class="list-group-item-text">{{r.description}}</p>
+            </div>
+            <p class="float-right">
+                <!-- <img src="{{r.imagePath}}" alt="{{r.name}}" class="img-responsive" style= "max-height: 120px">
+                We can implement this binding both ways but as we are assigning value to a property use attribute binding
+                -->
+                <img [src]="r.imagePath" alt="{{r.name}}" class="img-responsive" style= "max-height: 50px">
+            </p>
+        </a>
+    </div>
+</div>
+<app-recipes-item></app-recipes-item>
