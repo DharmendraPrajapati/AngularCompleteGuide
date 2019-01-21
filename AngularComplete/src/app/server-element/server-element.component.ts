@@ -4,7 +4,7 @@ import { Component, OnInit, Input, ViewEncapsulation } from '@angular/core';
   selector: 'app-server-element',
   templateUrl: './server-element.component.html',
   styleUrls: ['./server-element.component.css'],
-  encapsulation : ViewEncapsulation.Emulated
+  encapsulation : ViewEncapsulation.ShadowDom
 })
 export class ServerElementComponent implements OnInit {
  //* @input 
@@ -32,8 +32,7 @@ export class ServerElementComponent implements OnInit {
     - Native -> Native Shadow DOM with all it’s goodness.This is deprecated (also knows as ShadowDom)but we can use this to use shadow dom encapsulation feature. Only works with browser who support shadow DOM.
     - Emmulated -> No Shadow DOM but style encapsulation emulation. This feature is default in angular. This option will add an attribute to your element which apply CSS to your specific element not globally(CSS default behavior).
     - None -> No Shadow DOM at all. Therefore, also no style encapsulation.This will apply your CSS globally means angular view encapsulation will not work. If any component which have 'None' encapsulation 
-              option and it has CSS on element label (not Id level) then this CSS will get apply as globally on all components no matter whether that component has encapsulation option or not.
-  
+              option and it has CSS on element label (not Id level) then this CSS will get apply as globally on all components no matter whether that component has encapsulation option or not.  
   *  Find more info in Docs file
   * 
   * 
